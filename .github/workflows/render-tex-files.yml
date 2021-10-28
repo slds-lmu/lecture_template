@@ -28,7 +28,14 @@ jobs:
         run: Rscript -e 'install.packages("knitr")'
 
       - name: Test make
-        run: make
+        run: |
+          make
+          cd slides
+          make
+          cd ../exercises
+          make
+          cd ../code-demos
+          make
 
 
 
