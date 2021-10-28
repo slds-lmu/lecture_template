@@ -1,18 +1,18 @@
 ## How to create a new website repository?
 
-1. Create a new repository with the name `lecture_xyz` and select `slds-lmu/lecture_template` as template repository
-1.
+1. Create a new repository with the name `lecture_xyz` and select `slds-lmu/lecture_template` as template repository.
+2. Start editing everything to suite your needs.
 
 ## How to get started with your new lecture repository?
 
 1. The very basic structure of the template contains
-    a. `slides`: Raw `.tex` files of your lecture. PDFs are rendered automatically and moved to `slides-pdf`.
-    a. `exercises`: Raw `.tex` exercise files. PDFs are rendered automatically and moved to `exercises-pdf`.
-    a. `code-demos`: Raw `.tex` files for code demos. PDFs are rendered automatically and moved to `code-demos-pdf`.
-    a. `quizzes`: Raw `.csv` files for quizzes.
-    a. `cheatsheets`: Material for cheatsheets (images, source, etc.).
-    a. `latex-math`: Submodule included from `github.com/slds-lmu/latex-math`.
-    a. `style`: All relevant style files.
+    1. `slides`: Raw `.tex` files of your lecture. PDFs are rendered automatically and moved to `slides-pdf`.
+    1. `exercises`: Raw `.tex` exercise files. PDFs are rendered automatically and moved to `exercises-pdf`.
+    1. `code-demos`: Raw `.tex` files for code demos. PDFs are rendered automatically and moved to `code-demos-pdf`.
+    1. `quizzes`: Raw `.csv` files for quizzes.
+    1. `cheatsheets`: Material for cheatsheets (images, source, etc.).
+    1. `latex-math`: Submodule included from `github.com/slds-lmu/latex-math`.
+    1. `style`: All relevant style files.
 1. Each folder contains a `README.md` with more details.
 
 ## General editing workflow
