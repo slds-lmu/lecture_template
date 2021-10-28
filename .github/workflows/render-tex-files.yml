@@ -18,8 +18,8 @@ jobs:
           submodules: true  # Fetch latex-math
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-    #      - uses: r-lib/actions/setup-r@v1
-    #      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
     #
     #      - name: Install rmarkdown
     #        run: Rscript -e 'install.packages("knitr")'
