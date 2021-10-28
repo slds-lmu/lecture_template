@@ -24,11 +24,13 @@ jobs:
       - name: Install tinytex
         run: Rscript -e 'install.packages("tinytex")'
 
-      - name: Install rmarkdown
+      - name: Install knitr
         run: Rscript -e 'install.packages("knitr")'
 
       - name: Test make
         run: make
+
+
 
         #  - name: Setup texlive
         #    uses: xu-cheng/texlive-action/full@v1
