@@ -26,12 +26,12 @@ jobs:
 
       - name: Setup texlive
         uses: xu-cheng/texlive-action/full@v1
-          with:
-            run: |
-              apk add make
-              make slides/tex.mk
-              make exercises/Makefile
-              make code-demos/Makefile
+        with:
+          run: |
+            apk add make
+            make slides/tex.mk
+            make exercises/Makefile
+            make code-demos/Makefile
 
     #      - name: Commit files
     #        run: |
