@@ -12,13 +12,12 @@ jobs:
       - name: Print the input name to STDOUT
         run: echo The username is ${{ inputs.username }}
 
-    #    steps:
-    #      - name: Setup GitHub repository
-    #      - uses: actions/checkout@v2
-    #        with:
-    #          submodules: true  # Fetch latex-math
-    #          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-    #
+      - name: Setup GitHub repository
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch latex-math
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
     #      - uses: r-lib/actions/setup-r@v1
     #      - uses: r-lib/actions/setup-pandoc@v1
     #
