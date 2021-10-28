@@ -29,7 +29,6 @@ jobs:
 
       - name: Test make
         run: |
-          make
           cd slides
           make
           cd ../exercises
