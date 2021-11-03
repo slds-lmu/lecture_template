@@ -33,9 +33,6 @@ jobs:
       - name: Install latex
         run: sudo apt-get install -y latexmk texlive
 
-      - name: Install latexmk
-        run: sudo apt-get install -y latexmk
-
       - name: Test make
         run: |
           cd slides
