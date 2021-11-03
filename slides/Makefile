@@ -17,6 +17,8 @@ changes:
 			echo "hello from $$(pwd)";\
 			make slides-pdf;\
 			cd ..;\
+		else\
+			echo "nothing todo for $$i";\
     fi;\
 	done
 
