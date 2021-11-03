@@ -31,7 +31,7 @@ jobs:
         run: Rscript -e 'install.packages("knitr")'
 
       - name: Install latexmk
-        run: apt install latexmk
+        run: sudo apt-get install -y latexmk
 
       - name: Test make
         run: |
