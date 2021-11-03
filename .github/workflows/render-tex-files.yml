@@ -22,13 +22,16 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
+        #- uses: r-lib/actions/setup-pandoc@v1
 
-      - name: Install tinytex
-        run: Rscript -e 'install.packages("tinytex")'
+        #- name: Install tinytex
+        #run: Rscript -e 'install.packages("tinytex")'
 
-      - name: Install knitr
-        run: Rscript -e 'install.packages("knitr")'
+        #- name: Install knitr
+        #run: Rscript -e 'install.packages("knitr")'
+
+      - name: Install latex
+        run: sudo apt-get install -y latexmk texlive
 
       - name: Test make
         run: |
@@ -39,22 +42,12 @@ jobs:
           #cd ../code-demos
           #make
 
-
-
-        #  - name: Setup texlive
-        #    uses: xu-cheng/texlive-action/full@v1
-        #    with:
-        #      run: |
-        #        apk add make
-        #        make slides/tex.mk
-        #        make exercises/Makefile
-        #        make code-demos/Makefile
-
     #      - name: Commit files
     #        run: |
     #          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     #          git config --local user.name "github-actions[bot]"
-    #          git commit -m "Add pdf files" -a
+    #          git add slides-pdf/*.pdf
+    #          git commit -m "Add pdf files"
     #
     #      - name: Push changes
     #        uses: ad-m/github-push-action@master
