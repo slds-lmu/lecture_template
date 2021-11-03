@@ -7,6 +7,7 @@ all:
 	all-pdf
 
 changes:
+	@echo $(shell git rev-parse --abbrev-ref HEAD)
 	@for i in $(CHAPTER); do\
 		DN=$$(echo $$i | sed -e "s/\.//g");\
 		GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);\
