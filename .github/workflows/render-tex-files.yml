@@ -30,6 +30,9 @@ jobs:
       - name: Install knitr
         run: Rscript -e 'install.packages("knitr")'
 
+      - name: Install latexmk
+        run: apt install latexmk
+
       - name: Test make
         run: |
           cd slides
