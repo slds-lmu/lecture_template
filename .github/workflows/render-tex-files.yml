@@ -17,6 +17,7 @@ jobs:
       - name: Setup GitHub repository
         uses: actions/checkout@v2
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           submodules: true  # Fetch latex-math
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
