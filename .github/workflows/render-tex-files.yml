@@ -3,7 +3,7 @@ name: PR on main - Render and push changed tex files
 on:
   push:
     branches: 'main'
-  pull_requrest:
+  pull_request:
     branches: 'main'
 
 jobs:
