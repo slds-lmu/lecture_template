@@ -1,15 +1,24 @@
 TSLIDES = $(shell find . -maxdepth 1 -iname "slides-*.tex")
 TPDFS = $(TSLIDES:%.tex=%.pdf)
 
-all: texclean $(TPDFS) copy texclean 
+all:
+	@if [ -d "../../latex-math" ]; then\
+		make texclean;\
+		make $(TPDFS);\
+		make copy;\
+		make texclean;\
+	else\
+		echo "Cannot find 'latex-math' in root directory";\
+	fi
 
 $(TPDFS): %.pdf: %.tex
-	latexmk -pdf $<
+	@echo render $<;
+	@latexmk -pdf $<;
 
-copy: 
+copy:
 	cp *.pdf ../../slides-pdf
-	
-texclean: 
+
+texclean:
 	rm -rf *.out
 	rm -rf *.dvi
 	rm -rf *.log
@@ -29,4 +38,4 @@ texclean:
 	rm -rf *.fdb_latexmk
 	rm -rf *.synctex.gz
 	rm -rf *-concordance.tex
-	
+

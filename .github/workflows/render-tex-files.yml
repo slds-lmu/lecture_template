@@ -30,11 +30,11 @@ jobs:
       - name: Test make
         run: |
           cd slides
-          make
-          cd ../exercises
-          make
-          cd ../code-demos
-          make
+          make changes
+          #cd ../exercises
+          #make
+          #cd ../code-demos
+          #make
 
 
 
