@@ -1,14 +1,10 @@
 SHELL:=/bin/bash
 CHAPTER=$(shell find . -mindepth 2 -maxdepth 2 -type f -name 'Makefile' -exec dirname "{}" \;)
-FCHANGED=$(shell git diff-tree --no-commit-id --name-only -r HEAD)
+#FCHANGED=$(shell git diff-tree --no-commit-id --name-only -r HEAD)
+FCHANGED=$(shell git diff --name-only origin/main)
 
 all:
-	@for i in $(CHAPTER) ; do\
-		echo "processing $$i";\
-		cd $$i;\
-	  echo "hello from $$(pwd)";\
-		cd ..;\
-	done
+	all-pdf
 
 changes:
 	@for i in $(CHAPTER); do\
@@ -19,6 +15,7 @@ changes:
 		if [[ $$GLC != 0 ]]; then\
 			cd $$i;\
 			echo "hello from $$(pwd)";\
+			make slides-pdf;\
 			cd ..;\
     fi;\
 	done
@@ -28,6 +25,6 @@ all-pdf:
 		echo "processing $$i";\
 		cd $$i;\
 		echo "hello from $$(pwd)";\
-		make;\
+		make slides-pdf;\
 		cd ..;\
 	done

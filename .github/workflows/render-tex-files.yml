@@ -1,7 +1,9 @@
-name: Render tex files
+name: PR on main - Render and push changed tex files
 
 on:
   push:
+    branches: 'main'
+  pull_requrest:
     branches: 'main'
 
 jobs:

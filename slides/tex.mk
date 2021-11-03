@@ -5,6 +5,15 @@ all:
 	@if [ -d "../../latex-math" ]; then\
 		make texclean;\
 		make $(TPDFS);\
+		make texclean;\
+	else\
+		echo "Cannot find 'latex-math' in root directory";\
+	fi
+
+slides-pdf:
+	@if [ -d "../../latex-math" ]; then\
+		make texclean;\
+		make $(TPDFS);\
 		make copy;\
 		make texclean;\
 	else\
