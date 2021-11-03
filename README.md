@@ -1,7 +1,7 @@
 ## How to create a new website repository?
 
 1. Create a new repository with the name `lecture_xyz` and select `slds-lmu/lecture_template` as template repository.
-2. Start editing everything to suite your needs.
+2. Start editing everything to suite your needs. For important (editing) workflows see the `README` files in the directories `slides`, `exercises`, and `code-demos`.
 
 ## How to get started with your new lecture repository?
 
@@ -22,7 +22,7 @@
 1. When you have finished a task, write a short understandable commit message, the smaller and more precise your commit is the better. __PLEASE DO NOT FORCE PUSH PDF FILES!__ PDFs are rendered automatically via an actions workflow.
 1. Create a PR to the `main` branch and describe what you have done, reference issues, etc. Also assign a reviewer if necessary.
 1. The responsible person for the lecture then merges the PRs.
-1. A release is done once a while when enough new content was added. Therefore, the main branch __WITH__ PDFs is squashed and merged into the `release` branch.
+1. A release is done once a while when enough new content was added. Therefore, the main branch is merged into the `release` branch.
 
 
 # Contents, License, Team and Further Info
