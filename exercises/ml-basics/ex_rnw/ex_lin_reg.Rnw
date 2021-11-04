@@ -14,6 +14,7 @@ y & 160 & 150 & 175 & 185 & 165 & 170 \\
   \end{tabular}
 \end{center}
 
+test
 
 \begin{itemize}
 \item[a)] Assume a standard linear relationship $$\yi = \beta_0 + \beta_1 \xi + \epsi$$ with iid errors $\epsi$ and calculate the least squares estimator $\hat{\bm{\beta}}$ for $\bm{\beta}=(\beta_0, \beta_1)^\top$ manually (+ calculator).
