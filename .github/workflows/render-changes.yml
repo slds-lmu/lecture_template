@@ -38,9 +38,10 @@ jobs:
           #cd ../code-demos
           #make
 
+      - name: Set env for GITSTATUS
+        run: echo "GITSTATUS=$(git status -s | wc -l)" >> $GITHUB_ENV
+
       - name: Commit files
-        env:
-          GITSTATUS: ${{ git status -s | wc -l }}
         if: ${{ env.GITSTATUS != 0 }}
         run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
