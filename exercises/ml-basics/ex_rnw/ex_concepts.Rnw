@@ -6,6 +6,6 @@ Chapter 1 of the lecture introduces many important machine learning concepts. Wi
   \item A few bullet points explaining the main idea
 \end{enumerate}
 
-test
+test test
 
 The link to the mural whiteboard can be found in this week's etherpad. Select a group member who can present your concept shortly in class after the end of the group work.
