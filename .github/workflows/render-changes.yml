@@ -1,4 +1,4 @@
-name: PR on main - Render and push changed tex files
+name: PR on main - Render and push changed files
 
 on:
   push:
@@ -21,36 +21,37 @@ jobs:
           submodules: true  # Fetch latex-math
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-        #- uses: r-lib/actions/setup-r@v1
-        #- uses: r-lib/actions/setup-pandoc@v1
-
-        #- name: Install tinytex
-        #run: Rscript -e 'install.packages("tinytex")'
-
-        #- name: Install knitr
-        #run: Rscript -e 'install.packages("knitr")'
-
       - name: Install latex
         run: sudo apt-get install -y latexmk texlive-full
+
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Install knitr
+        run: Rscript -e 'install.packages("knitr")'
+
 
       - name: Test make
         run: |
           cd slides
           make changes
-          #cd ../exercises
-          #make
+          cd ../exercises
+          make
           #cd ../code-demos
           #make
 
       - name: Commit files
+        if: ${{ (git status -s)!=0 }}
         run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git config --local user.name "github-actions[bot]"
            git add slides-pdf/*.pdf
+           git add exercises-pdf/*.pdf
            git commit -m "Add pdf files"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
+        if: ${{ (git status -s)!=0 }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref }}
