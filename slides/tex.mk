@@ -1,6 +1,8 @@
 TSLIDES = $(shell find . -maxdepth 1 -iname "slides-*.tex")
 TPDFS = $(TSLIDES:%.tex=%.pdf)
 
+.PHONY: slides-pdf $(TPDFS)
+
 all:
 	@if [ -d "../../latex-math" ]; then\
 		make texclean;\

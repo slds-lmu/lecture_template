@@ -4,30 +4,30 @@ CHAPTER=$(shell find . -mindepth 2 -maxdepth 2 -type f -name 'Makefile' -exec di
 FCHANGED=$(shell git diff --name-only origin/main)
 
 all:
-	all-pdf
+	@echo "Specify target 'changes' to just render edited subdirs or 'all' to render all pdfs."
 
 changes:
-	@echo $(shell git rev-parse --abbrev-ref HEAD)
+	@echo "Hello from the $(shell git rev-parse --abbrev-ref HEAD) branch"
 	@for i in $(CHAPTER); do\
 		DN=$$(echo $$i | sed -e "s/\.//g");\
 		GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);\
-    GLC=$$(echo $$GF | grep $$DN | grep "[.]tex" | wc -l);\
+		GLC=$$(echo $$GF | grep "slides"$$DN | grep "[.]tex" | wc -l);\
 		echo "processing $$DN";\
 		if [[ $$GLC != 0 ]]; then\
 			cd $$i;\
-			echo "hello from $$(pwd)";\
+			echo "cd into $$(pwd)";\
 			make slides-pdf;\
 			cd ..;\
 		else\
 			echo "nothing todo for $$i";\
-    fi;\
+		fi;\
 	done
 
 all-pdf:
 	@for i in $(CHAPTER); do\
 		echo "processing $$i";\
 		cd $$i;\
-		echo "hello from $$(pwd)";\
+		echo "cd into $$(pwd)";\
 		make slides-pdf;\
 		cd ..;\
 	done
