@@ -1,4 +1,4 @@
-## Slides folder
+## Exercises folder
 
 Important files:
 - `Makefile`: File mainly used by CI (GitHub Actions, GA) to render files for which the source has changed. You can try it locally by editing a `.Rnw` file of a subchapter and then call `make changes` in the `exercises` directory.
