@@ -29,12 +29,12 @@ jobs:
       - name: Install knitr
         run: Rscript -e 'install.packages("knitr")'
 
-      - name: Test make
+      - name: Make pdfs
         run: |
           cd slides
           make changes
           cd ../exercises
-          make
+          make changes
           #cd ../code-demos
           #make
 
