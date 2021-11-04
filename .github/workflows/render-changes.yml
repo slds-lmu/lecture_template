@@ -38,14 +38,20 @@ jobs:
           #cd ../code-demos
           #make
 
-      - name: Set env for GITSTATUS
-        run: echo "GITSTATUS=$(git status -s | wc -l)" >> $GITHUB_ENV
+      - name: Set env for changes_exist (check for changes)
+        run: |
+          if git diff --exit-code; then
+            echo "::set-env name=changes_exist::false"
+          else
+            echo "::set-env name=changes_exist::true"
+          fi
+        #run: echo "GITSTATUS=$(git status -s | wc -l)" >> $GITHUB_ENV
 
       - name: Test status
-        run: echo ${{ env.GITSTATUS }}
+        run: echo ${{ env.changes_exist }}
 
       - name: Commit files
-        if: env.GITSTATUS != 0
+        if: ${{ env.changes_exist == 'true' }}
         run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git config --local user.name "github-actions[bot]"
@@ -55,7 +61,7 @@ jobs:
 
       - name: Push changes
         uses: ad-m/github-push-action@master
-        if: env.GITSTATUS != 0
+        if: ${{ env.changes_exist == 'true' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.head_ref }}ranch: ${{ github.head_ref }}
