@@ -45,7 +45,7 @@ jobs:
         run: echo ${{ env.GITSTATUS }}
 
       - name: Commit files
-        if_true: ${{ env.GITSTATUS }}
+        if: ${{ env.GITSTATUS}} != 0
         run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git config --local user.name "github-actions[bot]"
@@ -55,7 +55,7 @@ jobs:
 
       - name: Push changes
         uses: ad-m/github-push-action@master
-        if_true: ${{ env.GITSTATUS }}
+        if: ${{ env.GITSTATUS}} != 0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref }}
