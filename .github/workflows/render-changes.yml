@@ -41,7 +41,7 @@ jobs:
       - name: Set env for GITSTATUS
         run: echo "GITSTATUS=$(git status -s | wc -l)" >> $GITHUB_ENV
 
-      - name: Test status:
+      - name: Test status
         run: echo ${{ env.GITSTATUS }}
 
       - name: Commit files
