@@ -27,7 +27,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Install tinytex and knitr
-        run: Rscript -e 'install.packages(c("tinytex", "knitr", "here"))'
+        run: Rscript -e 'install.packages(c("tinytex", "knitr", "here", "fs"))'
 
       - name: Install dependencies from R, Rnw, and Rmd files
         run: Rscript attic/install-pkgs.R
