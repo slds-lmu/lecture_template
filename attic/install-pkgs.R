@@ -2,16 +2,14 @@
 exts <- c("*.Rmd", "*.Rnw", "*.R")
 files <- unlist(sapply(exts,
                 function(glob)
-                  as.character(fs::dir_ls(path = "..", recurse = TRUE, glob = glob))))
-files <- unlist(sapply(exts,
-                function(glob)
-                  as.character(fs::dir_ls(path = ".", recurse = TRUE, glob = glob))))
+                  as.character(fs::dir_ls(path = here::here(), recurse = TRUE, glob = glob))))
 
 
 matches <- c("")
 patterns <- c('(?<=library\\().*(?=\\))',
               '(?<=require\\().*(?=\\))',
               '\\w+(?=::)')
+
 # collect packages
 for(file in files){
   for(pattern in patterns){
