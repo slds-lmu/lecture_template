@@ -48,7 +48,9 @@ jobs:
         #run: echo "GITSTATUS=$(git status -s | wc -l)" >> $GITHUB_ENV
 
       - name: Test status
-        run: echo ${{ env.changes_exist }}
+        run: |
+          git status
+          echo The environment variable \"changes_exists=${{ env.changes_exist }}\"
 
       - name: Commit files
         if: ${{ env.changes_exist == 'true' }}
