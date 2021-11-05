@@ -23,11 +23,14 @@ jobs:
       - name: Install latex
         run: sudo apt-get install -y latexmk texlive-full
 
-      #- uses: r-lib/actions/setup-r@v1
-      #- uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
 
-      #- name: Install tinytex and knitr
-      #  run: Rscript -e 'install.packages(c("tinytex", "knitr"))'
+      - name: Install tinytex and knitr
+        run: Rscript -e 'install.packages(c("tinytex", "knitr", "here"))'
+
+      - name: Install dependencies from R, Rnw, and Rmd files
+        run: Rscript attic/install-pkgs.R
 
       - name: Make pdfs
         run: |
