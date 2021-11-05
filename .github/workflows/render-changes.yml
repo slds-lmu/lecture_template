@@ -27,7 +27,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Install knitr
-        run: Rscript -e 'install.packages("knitr")'
+        run: Rscript -e 'install.packages(c("tinytex", "knitr"))'
 
       - name: Make pdfs
         run: |
