@@ -2,6 +2,7 @@
 
 1. Create a new repository with the name `lecture_xyz` and select `slds-lmu/lecture_template` as template repository.
 2. Start editing everything to suite your needs. For important (editing) workflows see the `README` files in the directories `slides`, `exercises`, and `code-demos`.
+3. __Note:__ When creating new subchapters, it is important to copy the `Makefile` from one of the existing subchapters into the new one! Otherwise, the automatic rendering will not work.
 
 ## How to get started with your new lecture repository?
 
@@ -24,6 +25,7 @@
 1. The responsible person for the lecture then merges the PRs.
 1. A release is done once a while when enough new content was added. Therefore, the main branch is merged into the `release` branch.
 
+More workflows are described in [this](https://docs.google.com/document/d/1ayDlrDIAGxiUy6UXE4aDc1NIWG7bPACT8PGcvkWfOrc/edit#heading=h.esnnvwml8s4u) gdoc (in German). If you don't have permission, ask one of the responsible pearsons.
 
 # Contents, License, Team and Further Info
 Please see the main course site.
