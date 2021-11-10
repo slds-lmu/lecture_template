@@ -8,6 +8,7 @@ all:
 
 changes:
 	@echo "Hello from the $(shell git rev-parse --abbrev-ref HEAD) branch"
+	@echo "The changed files are: $(FCHANGED)"
 	@for i in $(CHAPTER); do\
 		DN=$$(echo $$i | sed -e "s/\.//g");\
 		GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);\
