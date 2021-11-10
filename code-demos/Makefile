@@ -1,12 +1,14 @@
+SHELL:=/bin/bash
 DEMOS = $(shell find . -maxdepth 2 -iname "code_demo_*.Rmd")
 PDFS = $(DEMOS:%.Rmd=%.pdf)
+FCHANGED=$(shell git diff --name-only origin/main)
 
-all: texclean $(PDFS) 
+all: texclean $(PDFS)
 
 $(PDFS): %.pdf: %.Rmd
 	Rscript -e 'setwd("$(dir $<)"); rmarkdown::render("$(notdir $<)")'
 
-texclean: 
+texclean:
 	rm -rf *.out
 	rm -rf *.dvi
 	rm -rf *.log
@@ -33,3 +35,18 @@ copypdfs: all
 uncache: $(DEMOS)
 	rm -rf code_demo_*_cache
 	rm -rf code_demo_*_files
+
+changes:
+	@echo "Hello from the $(shell git rev-parse --abbrev-ref HEAD) branch"
+	@echo "The changed files are: $(FCHANGED)"
+	DN=$$(echo $$DEMOS | sed -e "s/\.//g")
+	GLC=$$(echo $$FCHANGED | grep "code-demos"/*"[.]Rmd" | wc -l)
+	if [[ $$GLC != 0 ]]; then\
+	  echo "Run make demos";\
+		make
+	else\
+		echo "nothing todo for code demos";\
+	fi;\
+
+
+

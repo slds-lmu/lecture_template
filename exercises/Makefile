@@ -9,8 +9,7 @@ changes:
 	@echo "Hello from the $(shell git rev-parse --abbrev-ref HEAD) branch"
 	@for i in $(CHAPTER); do\
 		DN=$$(echo $$i | sed -e "s/\.//g");\
-		GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);\
-		GLC=$$(echo $$GF | grep "exercises"$$DN | grep "[.]Rnw" | wc -l);\
+		GLC=$$(echo $$FCHANGED | grep "exercises"$$DN | grep "[.]Rnw" | wc -l);\
 		echo "processing $$DN";\
 		if [[ $$GLC != 0 ]]; then\
 			cd $$i;\
