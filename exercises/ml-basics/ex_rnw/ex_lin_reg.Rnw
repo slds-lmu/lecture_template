@@ -18,6 +18,7 @@ y & 160 & 150 & 175 & 185 & 165 & 170 \\
 \begin{itemize}
 \item[a)] Assume a standard linear relationship $$\yi = \beta_0 + \beta_1 \xi + \epsi$$ with iid errors $\epsi$ and calculate the least squares estimator $\hat{\bm{\beta}}$ for $\bm{\beta}=(\beta_0, \beta_1)^\top$ manually (+ calculator).
 
+  test test
 
 \item[b)] Assume a non-linear relationship (polynomial degree 2) $$\yi = \beta_0 + \beta_1 \xi +\beta_2 (\xi)^2 + \epsi$$ with iid errors $\epsi$ and calculate the least squares estimator $\hat{\bm{\beta}}$ for $\bm{\beta}=(\beta_0, \beta_1, \beta_2)^\top$ with R.
 \end{itemize}
