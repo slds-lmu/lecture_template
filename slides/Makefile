@@ -11,9 +11,9 @@ changes:
 	@echo "The changed files are: $(FCHANGED)"
 	@for i in $(CHAPTER); do\
 		DN=$$(echo $$i | sed -e "s/\.//g");\
-		GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);\
-		GLC=$$(echo $$GF | grep "slides"$$DN | grep "[.]tex" | wc -l);\
-		echo "processing $$DN";\
+		#GF=$$(git diff-tree --no-commit-id --name-only -r HEAD);
+		GLC=$$(echo $$FCHANGED | grep "slides"$$DN | grep "[.]tex" | wc -l);\
+		@echo "processing $$DN";\
 		if [[ $$GLC != 0 ]]; then\
 			cd $$i;\
 			echo "cd into $$(pwd)";\
