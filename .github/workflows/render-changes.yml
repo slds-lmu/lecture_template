@@ -30,16 +30,18 @@ jobs:
         run: Rscript -e 'install.packages(c("tinytex", "knitr", "here", "fs"))'
 
       - name: Install dependencies from R, Rnw, and Rmd files
-        run: Rscript attic/install-pkgs.R
+        run: |
+          Rscript attic/install-pkgs.R
+          Rscript attic/install-pkgs.R # Run two times to verify installation
 
       - name: Make pdfs
         run: |
           cd slides
           make changes
-          #cd ../exercises
-          #make changes
-          #cd ../code-demos
-          #make
+          cd ../exercises
+          make changes
+          cd ../code-demos
+          make
 
       - name: Set env for GITCHANGES (check for changes)
         run: echo "GITCHANGES=$(git status -s | wc -l)" >> $GITHUB_ENV
@@ -61,6 +63,7 @@ jobs:
         run: |
            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git config --local user.name "github-actions[bot]"
+           git pull origin ${{ github.head_ref}}
            git add --all
            git commit -m "Add pdf files"
 
