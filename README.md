@@ -2,6 +2,7 @@
 
 1. Create a new repository with the name `lecture_xyz` and select `slds-lmu/lecture_template` as template repository.
 2. Start editing everything to suite your needs. For important (editing) workflows see the `README` files in the directories `slides`, `exercises`, and `code-demos`.
+3. __Note:__ When creating new subchapters, it is important to copy the `Makefile` from one of the existing subchapters into the new one! Otherwise, the automatic rendering will not work.
 
 ## How to get started with your new lecture repository?
 
