@@ -25,6 +25,7 @@
 1. The responsible person for the lecture then merges the PRs.
 1. A release is done once a while when enough new content was added. Therefore, the main branch is merged into the `release` branch.
 
+More workflows are described in [this](https://docs.google.com/document/d/1ayDlrDIAGxiUy6UXE4aDc1NIWG7bPACT8PGcvkWfOrc/edit#heading=h.esnnvwml8s4u) gdoc (in German). If you don't have permission, ask one of the responsible pearsons.
 
 # Contents, License, Team and Further Info
 Please see the main course site.
