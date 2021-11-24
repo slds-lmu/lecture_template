@@ -24,7 +24,7 @@ slides-pdf:
 
 $(TPDFS): %.pdf: %.tex
 	@echo render $<;
-	@latexmk -pdf $<;
+	@latexmk -halt-on-error -pdf $<;
 
 copy:
 	cp *.pdf ../../slides-pdf
