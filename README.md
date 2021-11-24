@@ -30,7 +30,6 @@ More workflows are described in [this](https://docs.google.com/document/d/1ayDlr
 # Contents, License, Team and Further Info
 Please see the main course site.
 
-
 ## Help is appreciated and welcome!
 
 We hope to continously improve and expand this course over the coming years.
