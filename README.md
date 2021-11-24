@@ -20,7 +20,7 @@
 
 1. We have two branches, the `main` and `release` branch.
 1. Work is exclusively done in a subbranch of the `main` branch!
-1. When you have finished a task, write a short understandable commit message, the smaller and more precise your commit is the better. __PLEASE DO NOT FORCE PUSH PDF FILES!__ PDFs are rendered automatically via an actions workflow.
+1. When you have finished a task, write a short understandable commit message, the smaller and more precise your commit is the better. __PLEASE DO NOT FORCE PUSH PDF FILES!__ PDFs are rendered automatically via an actions workflow. If you want to skip CI add a tag `[skip ci]` to your commit ([details see here](https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/)).
 1. Create a PR to the `main` branch and describe what you have done, reference issues, etc. Also assign a reviewer if necessary.
 1. The responsible person for the lecture then merges the PRs.
 1. A release is done once a while when enough new content was added. Therefore, the main branch is merged into the `release` branch.
